@@ -23,15 +23,13 @@ public class SelectionSort {
          * > Repeat L1 until unsorted part size becomes 0
          */
 
-        for(int unsortedPartIndex = playerKitNumbers.length -1 ; unsortedPartIndex > 0; unsortedPartIndex--){
-            int largest = 0;
-            for(int i=1;i<=unsortedPartIndex;i++){
-                if(playerKitNumbers[i]>playerKitNumbers[largest]){
-                    largest = i;
-                }
-                //System.out.println(largest);
-                Utility.swap(playerKitNumbers, largest, unsortedPartIndex);
+        for(int unsortedPartLastIndex = playerKitNumbers.length-1; unsortedPartLastIndex>0;unsortedPartLastIndex--){
+            int indexOfLargest = 0;
+            for(int i=1;i<=unsortedPartLastIndex;i++){
+                if(playerKitNumbers[i] > playerKitNumbers[indexOfLargest])
+                    indexOfLargest = i;
             }
+            Utility.swap(playerKitNumbers, indexOfLargest, unsortedPartLastIndex);
         }
         Utility.printArray(playerKitNumbers);
     }

@@ -1,3 +1,5 @@
+package folder;
+
 import java.util.Scanner;
 
 public class PalindromeIndex {

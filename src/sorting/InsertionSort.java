@@ -21,17 +21,17 @@ public class InsertionSort {
             > By end of L1 the array is sorted.
          */
 
-        for(int firstUnsortedIndex = 1; firstUnsortedIndex < playerKitNumbers.length;firstUnsortedIndex++){
-            int u1 = playerKitNumbers[firstUnsortedIndex];
-            int i;
-            for(i = firstUnsortedIndex; i>0;i--){
-                if(u1 < playerKitNumbers[i-1]){
-                    playerKitNumbers[i] = playerKitNumbers[i-1];
-                } else {
+        for(int unsortedPartFirstIndex = 1; unsortedPartFirstIndex <= playerKitNumbers.length-1; unsortedPartFirstIndex++){
+            int valueToInsert = playerKitNumbers[unsortedPartFirstIndex];
+            int indexToInsert;
+            for(indexToInsert = unsortedPartFirstIndex; indexToInsert >0; indexToInsert--){
+                if(valueToInsert < playerKitNumbers[indexToInsert-1])
+                    playerKitNumbers[indexToInsert] = playerKitNumbers[indexToInsert-1];
+                else {
                     break;
                 }
             }
-            playerKitNumbers[i] = u1;
+            playerKitNumbers[indexToInsert] = valueToInsert;
         }
 
         Utility.printArray(playerKitNumbers);
